@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="da">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TaskFlow</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>TaskFlow</h1>
+      <p class="counter" id="counter"></p>
+    </header>
+
+    <form id="task-form" class="card">
+      <input id="title" name="title" type="text" placeholder="Hvad skal laves?" maxlength="255" required>
+      <textarea id="description" name="description" rows="2" placeholder="Beskrivelse (valgfri)"></textarea>
+      <button type="submit">Tilføj opgave</button>
+    </form>
+
+    <p id="error" class="error" hidden></p>
+
+    <ul id="task-list" class="task-list"></ul>
+    <p id="empty" class="empty" hidden>Ingen opgaver endnu - tilføj den første ovenfor.</p>
+  </main>
+
+  <template id="task-template">
+    <li class="task">
+      <input type="checkbox" class="toggle" aria-label="Markér som færdig">
+      <div class="content">
+        <span class="title"></span>
+        <p class="description"></p>
+        <time class="date"></time>
+      </div>
+      <button class="delete" aria-label="Slet opgave" title="Slet">✕</button>
+    </li>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>
